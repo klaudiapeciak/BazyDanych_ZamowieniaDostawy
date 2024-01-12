@@ -107,7 +107,7 @@ CREATE TABLE cost (
 ```
 
 ## Inserting sample data
-Skrypt **'fake_data.sql'** wstawia rekordy do każdej tabeli w bazie. Poniżej przedstawiam przykłady:
+Skrypt **'fake_data.sql'** wstawia rekordy do każdej tabeli w bazie. Poniżej przykłady:
 
 * Tabela **'regions'**
 ```
