@@ -1,12 +1,14 @@
 # Projekt Bazy Danych - System Ewidencji Zamówień i Dostaw
 Projekt bazy danych do obsługi zamówień i dostaw (nr. 6) wykonany na laboratorium przedmiotu Bazy Danych (Politechnika Warszawska - wydział MiNI), semestr zimowy 2023/2024. Przedstawiona baza danych stanowi kompleksowe narzędzie do monitorowania informacji związanych z procesem zarządzania kosztami zamówień, czasami dostaw oraz szczegółami zamówień. Głównym jej celem jest umożliwienie efektywnego zarządzania logistyką oraz śledzenia kluczowych aspektów związanych z realizacją dostaw.
 
-### Tables - schema
+## Tables - schema
 Baza danych zawiera 7 tabel. Ich schemat i relacje:
 
 ![image](https://github.com/klaudiapeciak/BazyDanych_ZamowieniaDostawy/assets/148364888/fe09be09-0244-404f-bedf-6cbbd4f87383)
 
-### Tables - description
+## Tables - description
+Skrypt **'create_database.sql'** tworzy bazę danych **orders_delivery** ze wszystkimi tabelami, relacjami oraz ograniczeniami na kolumny.
+
 
 * Tabela **'regions'** zawiera szczegółowe informacje o regionach. Kolumny: id, nazwa regionu, populacja regionu, stolica regionu. Tworzenie tabeli:
 
@@ -104,7 +106,8 @@ CREATE TABLE cost (
 );
 ```
 
-### Inserting sample data
+## Inserting sample data
+Skrypt **'fake_data.sql'** wstawia rekordy do każdej tabeli w bazie. Poniżej przedstawiam przykłady:
 
 * Tabela **'regions'**
 ```
@@ -211,5 +214,11 @@ VALUES
 ;
 ```
 
+## Transaction
+W skrypcie **'transaction.sql'** jest napisana transakcja, która dodaje nowe zamówienie (id = 74) i związane z nim koszty do odpowiednich tabel w bazie danych. 
 
+## Indexes
+Skrypt **'indexes.sql'** zawiera kod do stworzenia indeksów w celu optymalizacji wydajności zapytań dla często używanych kolumn.
 
+## Procedure
+Skrypt **'procedure.sql'** zawiera kod do stworzenia procedury, która tworzy procedurę przechowywaną o nazwie **GetHighCostOrders**. Procedura ta przyjmuje parametr `@threshold` i zwraca informacje o zamówieniach, których łączne koszty (zakupu i dostawy) przekraczają wartość podaną w parametrze `@threshold`.
