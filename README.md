@@ -8,7 +8,7 @@ Baza danych zawiera 7 tabel. Ich schemat i relacje:
 
 ## Tables - description
 
-* Tabela 'regions' zawiera szczegółowe informacje o regionach. Kolumny: id, nazwa regionu, populacja regionu, stolica regionu. Tworzenie tabeli:
+* Tabela *'regions'* zawiera szczegółowe informacje o regionach. Kolumny: id, nazwa regionu, populacja regionu, stolica regionu. Tworzenie tabeli:
 ```
 CREATE TABLE regions (
     	region_id BIGINT PRIMARY KEY,
